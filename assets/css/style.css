@@ -115,6 +115,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     box-shadow: var(--shadow);
+    text-decoration: none;
 }
 
 .cta-button-primary:hover {
