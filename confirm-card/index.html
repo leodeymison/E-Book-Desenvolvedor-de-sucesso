@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmando Pagamento - Aguarde</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="shortcut icon" href="../assets/images/favicon.jpg" type="image/x-icon">
+    <style>
+        .confirmation-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #eb543f 100%);
+            color: var(--white);
+            padding: 4rem 0;
+        }
+
+        .confirmation-box {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 700px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            color: var(--text-dark);
+        }
+
+        .processing-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea 0%, #eb543f 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3.5rem;
+            animation: pulse 2s ease-in-out infinite;
+            position: relative;
+        }
+
+        .processing-icon::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid #667eea;
+            animation: ripple 2s ease-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .confirmation-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .confirmation-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .payment-info {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .payment-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .payment-detail:last-child {
+            border-bottom: none;
+        }
+
+        .payment-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .payment-value {
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .card-number {
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+        }
+
+        .status-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .status-title {
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-icon {
+            font-size: 1.5rem;
+        }
+
+        .status-box p {
+            color: #78350f;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .loading-dots {
+            display: inline-flex;
+            gap: 0.25rem;
+            margin-left: 0.5rem;
+        }
+
+        .loading-dots span {
+            width: 8px;
+            height: 8px;
+            background: #f59e0b;
+            border-radius: 50%;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+        .loading-dots span:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .loading-dots span:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+
+        @keyframes bounce {
+            0%, 80%, 100% {
+                transform: scale(0);
+            }
+            40% {
+                transform: scale(1);
+            }
+        }
+
+        .info-box {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .info-box-title {
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+        }
+
+        .info-box p {
+            color: #1e40af;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .security-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--bg-light);
+            flex-wrap: wrap;
+        }
+
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .security-badge-icon {
+            font-size: 1.2rem;
+            color: var(--success);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 2rem 0 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #eb543f 100%);
+            border-radius: 10px;
+            animation: progressAnimation 3s ease-in-out infinite;
+        }
+
+        @keyframes progressAnimation {
+            0% {
+                width: 30%;
+            }
+            50% {
+                width: 70%;
+            }
+            100% {
+                width: 30%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">&lt;/&gt;</div>
+        </div>
+    </header>
+
+    <!-- Confirmation Section -->
+    <section class="confirmation-section">
+        <div class="container">
+            <div class="confirmation-box">
+                <div class="processing-icon">💳</div>
+                
+                <h1 class="confirmation-title">Processando Pagamento</h1>
+                <p class="confirmation-subtitle">
+                    Estamos confirmando seu pagamento com a operadora do cartão. Aguarde alguns instantes...
+                </p>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+
+                <div class="status-box">
+                    <div class="status-title">
+                        <span class="status-icon">⏳</span>
+                        <span>Aguardando Confirmação</span>
+                        <div class="loading-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <p>
+                        Seu pagamento está sendo processado pela operadora do cartão de crédito. 
+                        Este processo geralmente leva apenas alguns segundos.
+                    </p>
+                </div>
+
+                <div class="payment-info">
+                    <div class="payment-detail">
+                        <span class="payment-label">Produto</span>
+                        <span class="payment-value">E-book - Do Zero ao Lucro</span>
+                    </div>
+                    <div class="payment-detail">
+                        <span class="payment-label">Valor</span>
+                        <span class="payment-value">R$ 29,99</span>
+                    </div>
+                    <div class="payment-detail">
+                        <span class="payment-label">Status</span>
+                        <span class="payment-value" style="color: #f59e0b;">Processando</span>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-box-title">
+                        <span class="info-icon">📧</span>
+                        <span>Após a Confirmação</span>
+                    </div>
+                    <p>
+                        Assim que seu pagamento for confirmado, você receberá um e-mail com o link de 
+                        download do e-book e todos os bônus exclusivos. Fique atento à sua caixa de entrada!
+                    </p>
+                </div>
+
+                <div class="security-badges">
+                    <div class="security-badge">
+                        <span class="security-badge-icon">🔒</span>
+                        <span>Conexão Segura</span>
+                    </div>
+                    <div class="security-badge">
+                        <span class="security-badge-icon">✓</span>
+                        <span>SSL Certificado</span>
+                    </div>
+                    <div class="security-badge">
+                        <span class="security-badge-icon">🛡️</span>
+                        <span>Dados Protegidos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 E-Book Desenvolvedor de sucesso. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="#privacidade">Privacidade</a>
+                <a href="#termos">Termos de Uso</a>
+                <a href="#contato">Contato</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
