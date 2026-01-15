@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do zero ao lucro: Colocando suas ideias em prática com programação</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/images/favicon.jpg" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">&lt;/&gt;</div>
+            <button class="cta-button-header" onclick="scrollToOffer()">Quero Comprar</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Do zero ao lucro: <span class="highlight">Colocando suas </span>ideias <span class="highlight">em </span>prática <span class="highlight">com </span>programação</h1>
+                <!-- <p class="hero-subtitle"></p> -->
+                <div class="hero-cta">
+                    <button class="cta-button-primary" onclick="scrollToOffer()">
+                        Garantir Meu E-book Agora
+                        <span class="arrow">→</span>
+                    </button>
+                    <p class="guarantee">✓ Acesso imediato após a compra</p>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="ebook-mockup">
+                    <div class="ebook-cover">
+                        <div class="ebook-shine"></div>
+                        <img src="./assets/images/capa2.png" alt="Capa do livro">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">O Que Você Vai Aprender</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📚</div>
+                    <h3>Conteúdo Completo</h3>
+                    <p>Mais de 100 páginas com conhecimento prático e aplicável</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Passo a Passo</h3>
+                    <p>Metodologia testada e aprovada por milhares de pessoas</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Resultados Rápidos</h3>
+                    <p>Aplique o conhecimento e veja mudanças em semanas</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💎</div>
+                    <h3>Bônus Exclusivos</h3>
+                    <p>Templates, checklists e materiais complementares</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">O Que Dizem Nossos Leitores</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Este e-book mudou completamente minha perspectiva. Conteúdo incrível e muito prático!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <strong>Maria Silva</strong>
+                            <span>Empresária</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Melhor investimento que fiz este ano. Recomendo para todos que querem evoluir!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">J</div>
+                        <div class="author-info">
+                            <strong>João Santos</strong>
+                            <span>Profissional de TI</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Conteúdo direto ao ponto, sem enrolação. Valeu cada centavo!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <strong>Ana Costa</strong>
+                            <span>Designer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section class="offer" id="offer">
+        <div class="container">
+            <div class="offer-box">
+                <div class="offer-badge">OFERTA ESPECIAL</div>
+                <h2 class="offer-title">Garanta Seu E-book Agora</h2>
+                <p class="offer-subtitle">Acesso imediato + Bônus exclusivos</p>
+                
+                <div class="price-box">
+                    <div class="old-price">De R$ 49,90</div>
+                    <div class="current-price">
+                        <span class="currency">R$</span>
+                        <span class="amount">19,99</span>
+                    </div>
+                    <div class="installment">ou 12x de R$ 1,99</div>
+                </div>
+
+                <div class="bonus-list">
+                    <h3>Você Também Recebe:</h3>
+                    <div class="bonus-item">✓ Bônus #1: Desconto de 50% nos próximos volumes</div>
+                    <div class="bonus-item">✓ Bônus #2: Atualizações gratuitas</div>
+                    <div class="bonus-item">✓ Bônus #2: Acesso exclusivo aos novos lançamentos e plataformas</div>
+                    <div class="bonus-item">✓ Garantia de 7 dias</div>
+                </div>
+
+                <button class="cta-button-primary large" onclick="handlePurchase()">
+                    Sim, Quero Garantir Meu E-book!
+                    <span class="arrow">→</span>
+                </button>
+
+                <div class="secure-payment">
+                    🔒 Pagamento 100% seguro e criptografado
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Como vou receber o e-book?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Após a confirmação do pagamento, você receberá um email com o link de download. O acesso é imediato!
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Posso aprender apenas usando o celular?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Sim, tudo ensinado no e-book é possível reproduzir usando o celular.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Posso ler em qualquer dispositivo?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Sim! O e-book está em formato PDF e pode ser lido em computadores, tablets e smartphones.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Existe garantia?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Sim! Oferecemos garantia incondicional de 7 dias. Se não gostar, devolvemos 100% do seu dinheiro.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Preciso ter conhecimento prévio?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Não! O e-book foi desenvolvido para pessoas de todos os níveis, desde iniciantes até avançados.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 E-Book Desenvolvedor de sucesso. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="#privacidade">Privacidade</a>
+                <a href="#termos">Termos de Uso</a>
+                <a href="#contato">Contato</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Sucesso -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon">✓</div>
+            <h3>Parabéns!</h3>
+            <p>Você será redirecionado para a página de pagamento.</p>
+            <button class="modal-button" onclick="closeModal()">Fechar</button>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
