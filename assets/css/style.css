@@ -479,6 +479,17 @@ body {
     animation: rotate 20s linear infinite;
 }
 
+@media (max-width: 800px){
+    .offer-seal {
+        left: -30px;
+    }
+}
+@media (max-width: 500px){
+    .offer-seal {
+        width: 120px;
+        height: 120px;
+    }
+}
 
 .offer-badge {
     display: inline-block;
