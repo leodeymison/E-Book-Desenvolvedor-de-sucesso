@@ -66,9 +66,9 @@ function revealOnScroll() {
 function initHeroImageRotation() {
     const heroImage = document.querySelector('.hero-image img');
     const images = [
-        './assets/images/capa/2.png',
-        './assets/images/capa/3.png',
         './assets/images/capa/1.png',
+        './assets/images/capa/2.png',
+        './assets/images/capa/3.png'
     ];
     let currentIndex = 0;
     
