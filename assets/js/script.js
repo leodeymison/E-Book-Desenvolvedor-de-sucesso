@@ -62,6 +62,23 @@ function revealOnScroll() {
     });
 }
 
+// Alternância de imagens do hero
+function initHeroImageRotation() {
+    const heroImage = document.querySelector('.hero-image img');
+    const images = [
+        './assets/images/capa/1.png',
+        './assets/images/capa/2.png',
+        './assets/images/capa/3.png'
+    ];
+    let currentIndex = 0;
+    
+    // Alterna entre as imagens a cada 3 segundos
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        heroImage.src = images[currentIndex];
+    }, 3000);
+}
+
 // Inicializa animações
 window.addEventListener('load', () => {
     const elements = document.querySelectorAll('.benefit-card, .testimonial-card');
@@ -72,6 +89,7 @@ window.addEventListener('load', () => {
     });
     
     revealOnScroll();
+    initHeroImageRotation();
 });
 
 window.addEventListener('scroll', revealOnScroll);
