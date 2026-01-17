@@ -98,7 +98,8 @@ body {
     position: relative;
 }
 .underline {
-    text-decoration: underline var(--primary-dark);
+    text-decoration: underline;
+    text-decoration-color: var(--primary-dark);
 }
 .hero-subtitle {
     font-size: 1.25rem;
