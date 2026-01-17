@@ -386,9 +386,24 @@ body {
 }
 
 .stars {
-    color: var(--secondary-color);
-    font-size: 1.2rem;
+    display: flex;
+    gap: 0.25rem;
     margin-bottom: 1rem;
+}
+
+.star {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.star.filled::before {
+    content: "★";
+    color: #ffd700;
+}
+
+.star.empty::before {
+    content: "★";
+    color: #4a4a4a;
 }
 
 .testimonial-text {
