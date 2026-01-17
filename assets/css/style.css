@@ -466,7 +466,19 @@ body {
     margin: 0 auto;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
 }
+
+.offer-seal {
+    position: absolute;
+    top: -60px;
+    left: -60px;
+    width: 160px;
+    height: 160px;
+    z-index: 10;
+    animation: rotate 20s linear infinite;
+}
+
 
 .offer-badge {
     display: inline-block;
